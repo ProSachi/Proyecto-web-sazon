@@ -1,0 +1,29 @@
+.wrapper {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-md);
+  background: var(--color-bg-main);
+}
+
+.card {
+  width: min(100%, 440px);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+  display: grid;
+  gap: var(--space-md);
+}
+
+.card p {
+  color: var(--color-text-muted);
+}
+
+.card button {
+  justify-self: start;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-full);
+  padding: 0.55rem 1rem;
+}

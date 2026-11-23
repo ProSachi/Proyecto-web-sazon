@@ -1,0 +1,202 @@
+/* ==========================================================================
+   SAZÓN · SISTEMA DE DISEÑO GLOBAL (MOBILE-FIRST)
+   ========================================================================== */
+
+/* 1. Importación de Tipografías Oficiales (Google Fonts) */
+@import url('https://googleapis.com');
+
+/* 2. Variables CSS (:root) - Kit de Marca Sazón */
+:root {
+  /* --- Paleta Institucional (Verdes Nutresa) --- */
+  --color-green-night: #114622;     /* Franja de datos, titulares oscuros */
+  --color-primary: #215B33;         /* Verde Nutresa: color primario / marca */
+  --color-primary-light: #3D8E33;   /* Verde hoja: hover, enlaces, banners */
+  --color-accent: #7FBA00;          /* Lima: CTA principal, acentos activos */
+  --color-water-green: #569E8F;     /* Verde agua: apoyo / nutrición */
+  --color-danger: #D6121A;          /* Rojo Nutresa: alertas, errores, eliminar */
+
+  /* --- Neutros y Fondos --- */
+  --color-dark-brown: #2A1605;      /* Café oscuro: footer, fondos oscuros */
+  --color-text: #3F4040;            /* Gris texto: cuerpo de texto principal */
+  --color-text-muted: #6B6C6C;      /* Texto secundario / placeholders */
+  --color-bg-main: #F4F4E8;         /* Marfil: fondo principal de la app */
+  --color-bg-secondary: #E9E8D7;    /* Marfil 2: tarjetas, bordes, fondos secundarios */
+  --color-surface: #FFFFFF;         /* Superficie limpia (inputs, modales) */
+  --color-header-bg: rgba(255, 255, 255, 0.96);
+  --color-header-border: #DAD9C4;
+  --color-sidebar-bg: #3D8E33;
+  --color-sidebar-text: #FFFFFF;
+  --color-footer-bg: #643B22;
+  --color-hero-bg: #1B4332;
+
+  /* --- Colores de Apoyo por Célula / Categoría (No usar como principal) --- */
+  --color-support-yellow: #F1C85C;  /* Amarillo: etiquetas de lote / advertencias */
+  --color-support-orange: #EA885C;  /* Naranja: acentos cálidos */
+  --color-support-toast: #CE9754;   /* Tostado: categorías de panadería/pastas */
+  --color-support-cacao: #643B22;   /* Cacao: mercadeo / chocolate */
+
+  /* --- Tipografías --- */
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* --- Escala Tipográfica (Mobile-First en rem) --- */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+
+  /* --- Espaciados (Múltiplos de 4px en rem) --- */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+
+  /* --- Bordes y Sombras --- */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.75rem;  /* 12px */
+  --radius-lg: 1rem;     /* 16px */
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(42, 22, 5, 0.08);
+  --shadow-md: 0 4px 12px rgba(42, 22, 5, 0.12);
+
+  /* --- Transiciones --- */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+}
+
+/* 3. Reset Moderno Mobile-First */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg-main);
+  min-height: 100dvh;
+  overflow-x: hidden; /* Previene scroll horizontal en móviles */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Jerarquía de Títulos (Poppins) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-green-night);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--text-2xl); }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+
+/* Escalado tipográfico en Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+}
+
+/* 5. Elementos Multimedia y Formularios Responsivos */
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button,
+input,
+select,
+label,
+code {
+  font-family: var(--font-mono);
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* 6. Accesibilidad (Requerido por el Kit de Sazón) */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+[data-theme="dark"] {
+  --color-bg-main: #114622;
+  --color-text: #F4F4E8;
+  --color-header-bg: rgba(19, 51, 38, 0.95);
+  --color-header-border: rgba(255, 255, 255, 0.12);
+  --color-bg-secondary: #193326;
+  --color-surface: #1B4332;
+  --color-sidebar-text: #FFFFFF;
+  --color-text-muted: #a3b1a8;
+  --color-green-night: #7FBA00;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #3D8E33;
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -1,0 +1,16 @@
+.module {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.module p {
+  color: var(--color-text-muted);
+}
+
+.placeholderCard {
+  margin-top: var(--space-sm);
+  background: var(--color-surface);
+  border: 1px dashed color-mix(in srgb, var(--color-text-muted) 45%, transparent);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}

@@ -1,0 +1,61 @@
+.hero {
+  position: relative;
+  min-height: 100dvh;
+}
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-dark-brown) 10%, transparent) 20%,
+    color-mix(in srgb, var(--color-dark-brown) 70%, transparent) 65%,
+    color-mix(in srgb, var(--color-dark-brown) 85%, transparent) 100%
+  );
+}
+
+.copy {
+  max-width: 620px;
+}
+
+.copy h1 {
+  color: var(--color-surface);
+  margin-bottom: var(--space-sm);
+}
+
+.copy p {
+  color: var(--color-bg-main);
+  font-size: var(--text-sm);
+}
+
+.cta {
+  background: var(--color-accent);
+  color: var(--color-dark-brown);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  padding: 0.65rem 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .overlay {
+    padding: var(--space-2xl);
+  }
+
+  .copy p {
+    font-size: var(--text-base);
+  }
+}
