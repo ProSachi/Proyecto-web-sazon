@@ -21,18 +21,16 @@ Sigue estos pasos para levantar el proyecto en tu entorno local:
 
 ### 1. Clonar el repositorio e instalar dependencias
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_PROYECTO>
+git clone https://github.com/ProSachi/Proyecto-web-sazon.git
+cd Proyecto-web-sazon
 npm install
 ```
 
 ### 2. Configurar variables de entorno
 Crea un archivo `.env` en la raíz del proyecto tomando como base el archivo `.env.example`:
-```bash
-cp .env.example .env
-```
+
 Abre el archivo `.env` y asigna la URL base de tu entorno (MockAPI en desarrollo):
-```env
+```
 VITE_API_URL=https://mockapi.io
 ```
 > **Importante:** En Vite, todas las variables de entorno expuestas al cliente deben iniciar obligatoriamente con el prefijo `VITE_`.
@@ -50,11 +48,11 @@ La aplicación estará disponible en `http://localhost:5173`.
 El proyecto separa estrictamente la **infraestructura compartida (`core/`)** de los **módulos de negocio de cada equipo (`features/`)**.
 
 ```text
-mi-proyecto-vite/
+Proyecto-web-sazon/
 ├── CONTRIBUTING.md
 ├── .env                        # Variables de entorno locales (Ignorado en Git)
 ├── .env.example                # Plantilla de variables de entorno
-├── .github/
+├── github/
 │   └── copilot-instructions.md # Reglas de arquitectura y buenas prácticas para Copilot
 ├── public/
 │   └── favicon.ico             # Archivos estáticos públicos
@@ -112,9 +110,9 @@ Para evitar conflictos al hacer *merge* y mantener la escalabilidad del proyecto
 5. **Registro de Rutas:**
    * Cuando termines una vista en `features/<tu-equipo>/pages/`, regístrala en `src/core/router/AppRouter.jsx` usando `React.lazy()` dentro de `PublicLayout` o `AuthLayout` según corresponda.
 6. **Asistente de IA (GitHub Copilot):**
-   * El repositorio cuenta con `.github/copilot-instructions.md`. GitHub Copilot leerá automáticamente este archivo para sugerir código alineado con nuestros principios SOLID, CSS Modules y arquitectura.
+   * El repositorio cuenta con `github/copilot-instructions.md`. GitHub Copilot leerá automáticamente este archivo para sugerir código alineado con nuestros principios SOLID, CSS Modules y arquitectura.
 7. **Manual Operativo:** 
-   * Antes de escribir código, lee detenidamente la [**Guía de Desarrollo por Célula (`CONTRIBUTING.md`)**](./CONTRIBUTING.md). Allí encontrarás el paso a paso para conectar tus vistas a los Layouts (`<Outlet />`), estructurar tus servicios con `axiosClient` (MockAPI → Spring Boot), manejar acciones protegidas y aplicar estilos Mobile-First.
+   * Antes de escribir código, lee detenidamente la [**Guía de Desarrollo por Célula (`GUIA_DESARROLLO.md`)**](./GUIA_DESARROLLO.md). Allí encontrarás el paso a paso para conectar tus vistas a los Layouts (`<Outlet />`), estructurar tus servicios con `axiosClient` (MockAPI → Spring Boot), manejar acciones protegidas y aplicar estilos Mobile-First.
 
 ---
 
