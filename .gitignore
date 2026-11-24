@@ -27,3 +27,4 @@ dist-ssr
 # Bitácora interna de arquitectura
 ROADMAP_INTERNO.md
 engram_copilotCLI.md
+.engram/

@@ -40,7 +40,7 @@ function AppRouter() {
               <Route path="/nutricion" element={<NutricionPage />} />
               <Route path="/planificacion" element={<PlanificacionPage />} />
               <Route path="/comunidad" element={<ComunidadPage />} />
-              <Route path="/mercadeo" element={<MercadeoPage />} />
+              <Route path="/mercadeo" element={<MercadeoPage />} />         
             </Route>
           </Route>
 
